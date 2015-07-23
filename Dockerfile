@@ -43,4 +43,4 @@ RUN service apache2 restart
 EXPOSE 80
 #CMD ["/usr/sbin/apache2", "-D",  "FOREGROUND"]
 #Enable apache service to start evenafter reboot
-CMD ["/usr/sbin/sysv-rc-conf", "apache2", "on"]
+#CMD ["/usr/sbin/sysv-rc-conf", "apache2", "on"]
