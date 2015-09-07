@@ -4,13 +4,13 @@ RUN apt-get update -y && apt-get upgrade -y
 #Install base packages for the application
 #Disable interactive prompts during package installation
 #ENV DEBIAN_FRONTEND noninteractive
-RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
-RUN  DEBIAN_FRONTEND=noninteractive apt-get install -y git curl apache2 php5
+#RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
+RUN  /usr/bin/apt-get install -y git curl apache2 php5
 #Apply 10 seconds delay to complete the package installation
 RUN sleep 10
 #CMD ["/usr/bin/apt-get",  "install", "-y",  "libapache2-mod-php5 php5-mcrypt php5-mysql php5-gd php5-ldap"]
 #install necessary modules to work with the application
-RUN  DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y libapache2-mod-php5 php5-mcrypt php5-mysql php5-gd php5-ldap
+RUN  /usr/bin/apt-get install -y libapache2-mod-php5 php5-mcrypt php5-mysql php5-gd php5-ldap
 RUN sleep 10
 #CMD ["/usr/bin/apt-get", "install",  "-y", "php5-mysql php5-mssql  php5-sybase php5-sqlite  vsftpd"]
 
