@@ -1,4 +1,5 @@
-FROM ubuntu:14.04 #Upgrade the current repo and system 
+FROM ubuntu:14.04 
+#Upgrade the current repo and system 
 RUN apt-get update -y && apt-get upgrade -y
 #Install base packages for the application 
 #Disable interactive prompts during package installation 
