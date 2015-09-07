@@ -34,5 +34,7 @@ ENV ALLOW_OVERRIDE **False**
 #RUN /bin/chown -R www-data:www-data /storage/var/www/ 
 #Open the apache port 80 
 EXPOSE 80 
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"] #Enable apache service to start evenafter reboot
-#CMD ["/usr/sbin/sysv-rc-conf", "apache2", "on"]
+RUN service apache2 start
+RUN apt-get install sysv-rc-conf
+ #Enable apache service to start evenafter reboot
+CMD ["/usr/sbin/sysv-rc-conf", "apache2", "on"]
