@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 RUN apt-get update -y && apt-get upgrade -y
 #Install base packages for the application
 #Disable interactive prompts during package installation
-ENV DEBIAN_FRONTEND noninteractive
+#ENV DEBIAN_FRONTEND noninteractive
 RUN sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 RUN  DEBIAN_FRONTEND=noninteractive apt-get install -y git curl apache2 php5
 #Apply 10 seconds delay to complete the package installation
