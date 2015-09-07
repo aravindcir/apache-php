@@ -35,6 +35,6 @@ ENV ALLOW_OVERRIDE **False**
 #Open the apache port 80 
 EXPOSE 80 
 RUN service apache2 start
-RUN apt-get install sysv-rc-conf
+RUN apt-get install sysv-rc-conf -y
  #Enable apache service to start evenafter reboot
 CMD ["/usr/sbin/sysv-rc-conf", "apache2", "on"]
